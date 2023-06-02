@@ -1,8 +1,8 @@
 all:
-  localhost:
+  children:
+    localhost:
       hosts:
         ansible_host: 127.0.0.1
-  children:
     host_nginx:
       hosts:
         nginx_1:
