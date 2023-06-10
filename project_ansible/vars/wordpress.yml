@@ -1,0 +1,6 @@
+---
+
+server_name: "project.my"
+mysql_db: "wordpress"
+mysql_user_name: "wordpress"
+mysql_user_password: "WordpreSS0!"
