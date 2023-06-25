@@ -30,3 +30,21 @@
   become: true
   roles:
     - { role: haproxy, tags: [haproxy] }
+
+- name: install monitoring stack
+  hosts: monitoring
+  become: true
+  vars_files:
+    - vars/wordpress_vault.yml
+  roles:
+    - { role: prometheus, tags: [prometheus] }
+    - { role: grafana, tags: [grafana] }
+
+- name: install node-exporter
+  hosts:
+    - wordpress
+    - database
+    - haproxy
+  become: true
+  roles:
+    - { role: node-exporter, tags: [node-exporter] }
